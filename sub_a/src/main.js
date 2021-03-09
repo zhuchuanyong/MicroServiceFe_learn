@@ -1,6 +1,8 @@
 import Vue from "vue";
 import App from "./App.vue";
-import router from "./router";
+// import router from "./router";
+import routes from "./router";
+import VueRouter from "vue-router";
 import store from "./store";
 import "./public-path";
 
@@ -19,16 +21,17 @@ export async function bootstrap (props) {
 // 导出子应用生命周期 挂载前 挂载后
 // 注意，实例化路由时，判断当运行在qiankun环境时，路由要添加前缀，前缀与主应用注册子应用函数genActiveRule("/aaa")内的参数一致
 export async function mount (props) {
+  console.log('props', props)
   router = new VueRouter({
-    base: window.__POWERED_BY_QIANKUN__ ? "/aaa" : "/",
-    mode: "history",
+    // base: window.__POWERED_BY_QIANKUN__ ? "/aaa" : "/",
+    // mode: "history",
     routes
   });
   instance = new Vue({
     router,
     store,
     render: h => h(App)
-  }).$mount("#app");
+  }).$mount("#app-subA");
 }
 
 

@@ -10,11 +10,14 @@ const exec = util.promisify(require('child_process').exec);
 function start() {
   sub_apps.forEach(async i => {
     console.log(`${i} 开始启动... 全部启动需要时间，请稍加等候，或刷新浏览器即可`)
+    console.log('i', i)
+    console.log('path.resolve(i)', path.resolve(i))
     const { stdout, stderr } = await exec('npm run serve', { cwd: path.resolve(i) });
+    console.log('1111', 1111)
     console.log(i, 'success', stdout)
     console.error(i, 'error', stderr)
   });
-  exec('start http://localhost:6650/');
+  exec('start http://localhost:7100/');
 };
 start();
 
