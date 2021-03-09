@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    微前端 子应用1
+    微前端 子应用2
   </div>
 </template>
 

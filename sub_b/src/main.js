@@ -23,16 +23,15 @@ export async function bootstrap (props) {
 export async function mount (props) {
   console.log('props', props)
   router = new VueRouter({
-    // hash模式 #
-    // base: window.__POWERED_BY_QIANKUN__ ? "/aaa" : "/",
-    // mode: "history",
+    base: window.__POWERED_BY_QIANKUN__ ? "/bbb" : "/",
+    mode: "history",
     routes
   });
   instance = new Vue({
     router,
     store,
     render: h => h(App)
-  }).$mount("#app-subA");
+  }).$mount("#app-subB");
 }
 
 

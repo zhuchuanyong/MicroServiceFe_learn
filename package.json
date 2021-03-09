@@ -11,6 +11,7 @@
 
 
         "start:sub_a": "cd sub_a && npm run serve",
+        "start:sub_b": "cd sub_b && npm run serve",
         "start:master": "cd master && npm run serve",
         "start-all": "npm-run-all --parallel start:*"
     },
